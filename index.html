@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Global Importation Business">
+    <title>Velora Nexis Ventures LLC</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body */
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            transition: opacity 1s;
+            opacity: 0;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00bcd4;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://source.unsplash.com/1600x900/?global,trade,shipping') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .hero .btn {
+            background-color: #00bcd4;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .hero .btn:hover {
+            background-color: #0097a7;
+        }
+
+        /* Services Section */
+        .section {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .section h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .service-cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            width: 300px;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            padding: 20px;
+            font-weight: 600;
+        }
+
+        .card p {
+            padding: 0 20px 20px;
+            color: #fff;
+        }
+
+        /* Go Top Button (Glassmorphism) */
+        .go-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50%;
+            font-size: 2rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            display: none;
+            transition: background-color 0.3s;
+        }
+
+        .go-top:hover {
+            background-color: rgba(0, 188, 212, 0.7);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .service-cards {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .card {
+                width: 80%;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Velora Nexis Ventures LLC</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Connecting the World Through Global Trade</h2>
+            <p>We bring high-quality products from all over the world to your business, enhancing opportunities for success.</p>
+            <a href="#services" class="btn">Explore Our Services</a>
+        </div>
+    </section>
+
+    <section class="section" id="services">
+        <h2>Our Services</h2>
+        <div class="service-cards">
+            <div class="card">
+                <img src="https://source.unsplash.com/1600x900/?shipping,container" alt="Shipping">
+                <h3>Global Importation</h3>
+                <p>Efficient and seamless importation processes, ensuring the highest standards of quality.</p>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/1600x900/?global,trade" alt="Trade">
+                <h3>Worldwide Distribution</h3>
+                <p>We connect products to markets across continents, delivering value globally.</p>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/1600x900/?warehouse,logistics" alt="Logistics">
+                <h3>Logistics & Supply Chain</h3>
+                <p>Optimizing logistics to ensure reliable and fast deliveries to all parts of the world.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <h2>About Us</h2>
+        <p>Our focus is on facilitating smooth, efficient trade across international borders, enhancing access to high-quality products for businesses and consumers. Through an integrated network and expertise in logistics and compliance, we navigate the complexities of global markets with ease.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Velora Nexis Ventures LLC | All Rights Reserved</p>
+    </footer>
+
+    <button class="go-top" id="goTopBtn">&#8679;</button>
+
+    <script>
+        // Fade-in effect on page load
+        window.addEventListener('load', () => {
+            document.body.style.animation = 'fadeIn 1s ease forwards';
+        });
+
+        // Show "Go Top" button when scrolling
+        const goTopBtn = document.getElementById('goTopBtn');
+        window.onscroll = () => {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                goTopBtn.style.display = 'block';
+            } else {
+                goTopBtn.style.display = 'none';
+            }
+        };
+
+        // Scroll to top
+        goTopBtn.addEventListener('click', () => {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+    </script>
+</body>
+</html>
