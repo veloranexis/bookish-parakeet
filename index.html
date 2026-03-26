@@ -1,307 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Global Importation Business">
-    <title>Velora Nexis Ventures LLC</title>
-    <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Velora Nexis Ventures LLC | Professional & Discreet Corporate Solutions">
+<title>Velora Nexis Ventures LLC</title>
+<style>
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; }
 
-        /* Body */
-        body {
-            font-family: 'Helvetica Neue', sans-serif;
-            background-color: #f8f8f8;
-            color: #333;
-            margin: 0;
-            transition: opacity 1s;
-            opacity: 0;
-        }
+/* Body */
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  transition: opacity 1s;
+  opacity: 0;
+  overflow-x: hidden;
+}
 
-        /* Header */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background-color: rgba(0, 0, 0, 0.6);
-            color: #fff;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-        }
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+header h1 { font-size:2rem; font-weight:700; }
+nav ul { list-style:none; display:flex; }
+nav ul li { margin-left:30px; }
+nav ul li a { color:#fff; text-decoration:none; font-weight:600; transition: color 0.3s; }
+nav ul li a:hover { color:#00bcd4; }
 
-        header h1 {
-            font-size: 2rem;
-        }
+/* Hero */
+.hero {
+  height:100vh;
+  background: url('https://source.unsplash.com/1600x900/?professional,corporate') no-repeat center center/cover;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  text-align:center;
+}
+.hero::before {
+  content:'';
+  position:absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.5);
+}
+.hero-content {
+  position:relative;
+  z-index:1;
+  backdrop-filter: blur(20px);
+  background: rgba(255,255,255,0.1);
+  padding: 80px 60px;
+  border-radius: 25px;
+}
+.hero h2 { font-size:3.5rem; margin-bottom:20px; font-weight:700; }
+.hero p { font-size:1.2rem; margin-bottom:30px; }
+.hero .btn {
+  background: rgba(0,188,212,0.7);
+  color:#fff;
+  padding:16px 40px;
+  border-radius:15px;
+  font-weight:600;
+  font-size:1.2rem;
+  text-decoration:none;
+  transition:0.3s;
+}
+.hero .btn:hover { background: rgba(0,188,212,0.9); transform:scale(1.05); }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
+/* Sections */
+.section { padding:100px 20px; text-align:center; }
+.section h2 { font-size:3rem; margin-bottom:50px; font-weight:700; }
 
-        nav ul li {
-            margin-left: 30px;
-        }
+/* Cards */
+.card-container, .why-choose, .team-container { display:flex; flex-wrap:wrap; justify-content:center; gap:40px; }
+.card, .why-card, .team-card { 
+  background: rgba(255,255,255,0.1); 
+  backdrop-filter: blur(20px); 
+  border-radius:25px; 
+  width:320px; 
+  padding:35px; 
+  transition: transform 0.3s, box-shadow 0.3s; 
+  box-shadow:0 8px 35px rgba(0,0,0,0.25);
+}
+.card:hover, .why-card:hover, .team-card:hover { transform:translateY(-12px); box-shadow:0 16px 50px rgba(0,0,0,0.35); }
+.card img, .team-card img { width:100%; border-radius:20px; margin-bottom:20px; }
+.card h3, .why-card h4, .team-card h3 { margin-bottom:15px; }
+.card p, .why-card p, .team-card p { font-size:1rem; }
 
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
+/* Why Choose Us */
+.why-card { width:260px; padding:35px; }
 
-        nav ul li a:hover {
-            color: #00bcd4;
-        }
+/* Testimonials */
+.testimonial-container { display:flex; flex-direction:column; align-items:center; gap:30px; }
+.testimonial {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(20px);
+  border-radius:25px;
+  padding:35px;
+  width:80%;
+  max-width:750px;
+  font-style:italic;
+  box-shadow:0 8px 35px rgba(0,0,0,0.25);
+}
 
-        /* Hero Section */
-        .hero {
-            background: url('https://source.unsplash.com/1600x900/?global,trade,shipping') no-repeat center center/cover;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            text-align: center;
-            position: relative;
-        }
+/* Footer */
+footer {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+  text-align:center;
+  padding:40px;
+  margin-top:50px;
+  border-top:1px solid rgba(255,255,255,0.2);
+  font-size:0.9rem;
+}
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.4);
-        }
+/* Go Top */
+.go-top {
+  position: fixed;
+  bottom:30px;
+  right:30px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(20px);
+  color: #fff;
+  padding:18px 22px;
+  border-radius:50%;
+  font-size:2.2rem;
+  border:none;
+  cursor:pointer;
+  display:none;
+  transition:0.3s;
+}
+.go-top:hover { background: rgba(0,188,212,0.8); transform:scale(1.15); }
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
+/* Floating Glass Blobs */
+.blob {
+  position:absolute;
+  border-radius:50%;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(25px);
+  animation: float 20s infinite alternate;
+  z-index:0;
+}
+.blob1 { width:300px; height:300px; top:10%; left:15%; animation-duration:25s; }
+.blob2 { width:250px; height:250px; top:70%; left:70%; animation-duration:30s; }
+.blob3 { width:400px; height:400px; top:40%; left:80%; animation-duration:35s; }
+@keyframes float {
+  0%{transform:translateY(0px) translateX(0px);}
+  50%{transform:translateY(-30px) translateX(20px);}
+  100%{transform:translateY(0px) translateX(0px);}
+}
 
-        .hero h2 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
+/* Animations */
+@keyframes fadeIn {0%{opacity:0;}100%{opacity:1;}}
+html { scroll-behavior: smooth; }
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-
-        .hero .btn {
-            background-color: #00bcd4;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s;
-        }
-
-        .hero .btn:hover {
-            background-color: #0097a7;
-        }
-
-        /* Services Section */
-        .section {
-            padding: 80px 20px;
-            text-align: center;
-            background-color: #fff;
-        }
-
-        .section h2 {
-            font-size: 3rem;
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
-
-        .service-cards {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-            overflow: hidden;
-            width: 300px;
-            transition: transform 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card h3 {
-            font-size: 1.5rem;
-            padding: 20px;
-            font-weight: 600;
-        }
-
-        .card p {
-            padding: 0 20px 20px;
-            color: #fff;
-        }
-
-        /* Go Top Button (Glassmorphism) */
-        .go-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 50%;
-            font-size: 2rem;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            display: none;
-            transition: background-color 0.3s;
-        }
-
-        .go-top:hover {
-            background-color: rgba(0, 188, 212, 0.7);
-        }
-
-        /* Footer */
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .service-cards {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .card {
-                width: 80%;
-                margin: 0 auto;
-            }
-        }
-    </style>
+/* Responsive */
+@media(max-width:768px){
+  .hero h2 { font-size:2.5rem; }
+  .hero p { font-size:1rem; }
+  .card-container, .why-choose, .team-container { flex-direction:column; align-items:center; }
+  .card, .why-card, .team-card { width:85%; margin:0 auto; }
+}
+</style>
 </head>
 <body>
-    <header>
-        <h1>Velora Nexis Ventures LLC</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+<div class="blob blob3"></div>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h2>Connecting the World Through Global Trade</h2>
-            <p>We bring high-quality products from all over the world to your business, enhancing opportunities for success.</p>
-            <a href="#services" class="btn">Explore Our Services</a>
-        </div>
-    </section>
+<header>
+  <h1>Velora Nexis Ventures LLC</h1>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Expertise</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Connect</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <section class="section" id="services">
-        <h2>Our Services</h2>
-        <div class="service-cards">
-            <div class="card">
-                <img src="https://source.unsplash.com/1600x900/?shipping,container" alt="Shipping">
-                <h3>Global Importation</h3>
-                <p>Efficient and seamless importation processes, ensuring the highest standards of quality.</p>
-            </div>
-            <div class="card">
-                <img src="https://source.unsplash.com/1600x900/?global,trade" alt="Trade">
-                <h3>Worldwide Distribution</h3>
-                <p>We connect products to markets across continents, delivering value globally.</p>
-            </div>
-            <div class="card">
-                <img src="https://source.unsplash.com/1600x900/?warehouse,logistics" alt="Logistics">
-                <h3>Logistics & Supply Chain</h3>
-                <p>Optimizing logistics to ensure reliable and fast deliveries to all parts of the world.</p>
-            </div>
-        </div>
-    </section>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h2>Professional Guidance. Discreet & Trusted.</h2>
+    <p>We provide strategic insight and professional facilitation for complex matters, maintaining the highest standard of discretion.</p>
+    <a href="#services" class="btn">Discover More</a>
+  </div>
+</section>
 
-    <section class="section" id="about">
-        <h2>About Us</h2>
-        <p>Our focus is on facilitating smooth, efficient trade across international borders, enhancing access to high-quality products for businesses and consumers. Through an integrated network and expertise in logistics and compliance, we navigate the complexities of global markets with ease.</p>
-    </section>
+<section class="section" id="services">
+  <h2>Our Expertise</h2>
+  <div class="card-container">
+    <div class="card">
+      <img src="https://source.unsplash.com/600x400/?professional,office" alt="Strategic Solutions">
+      <h3>Strategic Solutions</h3>
+      <p>Tailored guidance designed for informed and confident decision-making.</p>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/600x400/?innovation,analysis" alt="Operational Insight">
+      <h3>Operational Insight</h3>
+      <p>Providing clarity in complex scenarios with experienced perspectives.</p>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/600x400/?consulting,professional" alt="Professional Facilitation">
+      <h3>Professional Facilitation</h3>
+      <p>Ensuring smooth, discreet, and reliable support for every engagement.</p>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <p>&copy; 2026 Velora Nexis Ventures LLC | All Rights Reserved</p>
-    </footer>
+<section class="section" id="why">
+  <h2>Why Choose Us</h2>
+  <div class="why-choose">
+    <div class="why-card">
+      <h4>Expertise</h4>
+      <p>Senior-level insight and experience to guide complex decisions.</p>
+    </div>
+    <div class="why-card">
+      <h4>Discretion</h4>
+      <p>Operations and communication conducted with complete confidentiality.</p>
+    </div>
+    <div class="why-card">
+      <h4>Perspective</h4>
+      <p>A broad, informed viewpoint to support strategic outcomes.</p>
+    </div>
+  </div>
+</section>
 
-    <button class="go-top" id="goTopBtn">&#8679;</button>
+<section class="section" id="team">
+  <h2>Our Advisors</h2>
+  <div class="team-container">
+    <div class="team-card">
+      <img src="https://source.unsplash.com/400x400/?executive,professional" alt="Advisor">
+      <h3>Senior Advisors</h3>
+      <p>Focused on delivering experienced and confidential guidance for all engagements.</p>
+    </div>
+    <div class="team-card">
+      <img src="https://source.unsplash.com/400x400/?corporate,consulting" alt="Advisor">
+      <h3>Consulting Experts</h3>
+      <p>Combining insight and analysis to support informed decision-making.</p>
+    </div>
+  </div>
+</section>
 
-    <script>
-        window.addEventListener('load', () => {
-            document.body.style.animation = 'fadeIn 1s ease forwards';
-        });
-        
-        const goTopBtn = document.getElementById('goTopBtn');
-        window.onscroll = () => {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                goTopBtn.style.display = 'block';
-            } else {
-                goTopBtn.style.display = 'none';
-            }
-        };
+<section class="section" id="testimonials">
+  <h2>Client Feedback</h2>
+  <div class="testimonial-container">
+    <div class="testimonial">"Velora Nexis Ventures provided exceptional guidance with utmost professionalism."</div>
+    <div class="testimonial">"Discreet, reliable, and highly competent advisory support."</div>
+    <div class="testimonial">"Insightful guidance and confident facilitation at every step."</div>
+  </div>
+</section>
 
-        goTopBtn.addEventListener('click', () => {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        });
-    </script>
+<section class="section" id="contact">
+  <h2>Connect With Us</h2>
+  <p>For professional inquiries and engagement opportunities, our team responds discreetly and efficiently.</p>
+  <p style="font-style: italic; color: rgba(255,255,255,0.7);">Engagement details are provided upon initial discussion.</p>
+</section>
+
+<footer>
+  <p>&copy; 2026 Velora Nexis Ventures LLC | All Rights Reserved</p>
+</footer>
+
+<button class="go-top" id="goTopBtn">&#8679;</button>
+
+<script>
+window.addEventListener('load',()=>{document.body.style.animation='fadeIn 1s ease forwards';});
+const goTopBtn=document.getElementById('goTopBtn');
+window.onscroll=()=>{if(document.body.scrollTop>300||document.documentElement.scrollTop>300){goTopBtn.style.display='block';}else{goTopBtn.style.display='none';}};
+goTopBtn.addEventListener('click',()=>{document.body.scrollTop=0;document.documentElement.scrollTop=0;});
+</script>
 </body>
 </html>
