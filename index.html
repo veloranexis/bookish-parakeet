@@ -285,12 +285,10 @@
     <button class="go-top" id="goTopBtn">&#8679;</button>
 
     <script>
-        // Fade-in effect on page load
         window.addEventListener('load', () => {
             document.body.style.animation = 'fadeIn 1s ease forwards';
         });
-
-        // Show "Go Top" button when scrolling
+        
         const goTopBtn = document.getElementById('goTopBtn');
         window.onscroll = () => {
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
@@ -300,7 +298,6 @@
             }
         };
 
-        // Scroll to top
         goTopBtn.addEventListener('click', () => {
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
